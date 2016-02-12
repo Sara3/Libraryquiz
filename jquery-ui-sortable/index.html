@@ -1,6 +1,6 @@
 <!doctype html>
  
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="utf-8" />
     <title>jQuery UI Sortable - Default functionality</title>
@@ -17,23 +17,38 @@
         });
     });
     </script>
+	
+	<script>
+	function sort() {
+		var toSort = document.getElementById("sortable").children;
+		for ( i = 0; i < toSort.length; i++){
+			if(toSort[i].id != i){
+				document.write("list not sorted");
+				break;
+				}
+				else{
+					document.write(toSort[i].id);
+				}
+			}
+		}
+	</script>
 </head>
 <body>
-<div>
+
 <ul id="sortable">
-    <li class="ui-state-default">book 1</li>
-    <li class="ui-state-default">book 2</li>
-    <li class="ui-state-default">book 3</li>
-    <li class="ui-state-default">book 4</li>
-    <li class="ui-state-default">book 5</li>
+    <li class="ui-state-default" id = "0" >book 1</li>
+    <li class="ui-state-default" id = "1" >book 2</li>
+    <li class="ui-state-default" id = "2" >book 3</li>
+    <li class="ui-state-default" id = "3" >book 4</li>
+    <li class="ui-state-default" id = "4" >book 5</li>
 
 </ul>
-</div>
-<div id="allbuttons">
-<button class="button button5">Show Work</button>
-<button class="button button5">Reset</button>
+
+<div class="allbuttons">
+<button class="button button5" onclick ="sort();">Show Work</button>
+<button class="button button5" onclick ="window.location.href='index.html';">Reset</button>
 <button class="button button5">Submit</button>
 </div>
 
 </body>
-</html>
+</html> 
