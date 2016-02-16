@@ -1,7 +1,20 @@
-<!doctype html>
+<!doctype html> 
  
 <html lang="en"> 
 <head>
+	<style type="text/css">
+	.container{
+		background-color: lightgrey;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+	}
+	</style>
+		
     <meta charset="utf-8" />
     <title>jQuery UI Sortable - Default functionality</title>
 
@@ -31,43 +44,44 @@
 	}
 		
 	function numOrdA(a, b){ 
-		return (a-b); }
+		return (a-b); 
+	}
 		
 	function Sprint(list){
 		if(list.length == 0){
 		document.getElementById("demo").innerHTML = 
-			"Book list is sorted";
-		} else{
-			list.sort(numOrdA);
-			document.getElementById("demo").innerHTML ="list of books misplaced:"+list.toString();
-	
+	    "Book list is sorted";
 		
-		}
-		
+		}else{
+		list.sort(numOrdA);
+		document.getElementById("demo").innerHTML ="list of books misplaced:"+list.toString();
+	    }
 	}
 	
 		
 	</script>
 </head>
 <body>
+<div class = "container" >
+	<ul id="sortable">
+		<li class="ui-state-default" id = "1" >book 1</li> 
+		<li class="ui-state-default" id = "2" >book 2</li>
+		<li class="ui-state-default" id = "3" >book 3</li>
+		<li class="ui-state-default" id = "4" >book 4</li>
+		<li class="ui-state-default" id = "5" >book 5</li>
 
-<ul id="sortable">
-    <li class="ui-state-default" id = "1" >book 1</li>
-    <li class="ui-state-default" id = "2" >book 2</li>
-    <li class="ui-state-default" id = "3" >book 3</li>
-    <li class="ui-state-default" id = "4" >book 4</li>
-    <li class="ui-state-default" id = "5" >book 5</li>
-
-</ul>
-
+	</ul>
 	
-<div class="allbuttons">
-<button class="button button5" onclick ="check_sort();">Show Work</button>
-<button class="button button5" onclick ="window.location.href='index.html'">Reset</button>
-<button class="button button5">Submit</button>
+	<div class="allbuttons" style="position: fixed; bottom: 0; right: 0; padding: 1em;">
+					
+    <button class="button button5" onclick ="check_sort();">Show Work</button>
+	<button class="button button5" onclick ="window.location.href='index.html'">Reset</button>
+	<button class="button button5">Submit</button>
+	<p id="demo" style="color:grey;"> result will display here </p> 
+  </div>
 </div>
 
-<div id="demo" style="color:white;"> result will display here </div> 
-
+  
+  
 </body>
 </html> 
