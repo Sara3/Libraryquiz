@@ -15,40 +15,59 @@
         $( "#sortable" ).sortable({ 
             placeholder: "ui-sortable-placeholder" 
         });
-    });
+    }); 
     </script>
 	
 	<script>
-	function sort() {
+	function check_sort() {
+		var list=[];
 		var toSort = document.getElementById("sortable").children;
 		for ( i = 0; i < toSort.length; i++){
-			if(toSort[i].id != i){
-				document.write("list not sorted");
-				break;
-				}
-				else{
-					document.write(toSort[i].id);
-				}
+			if(toSort[i].id != i+1){
+			list.push(toSort[i].id)
 			}
 		}
+		Sprint(list);
+	}
+		
+	function numOrdA(a, b){ 
+		return (a-b); }
+		
+	function Sprint(list){
+		if(list.length == 0){
+		document.getElementById("demo").innerHTML = 
+			"Book list is sorted";
+		} else{
+			list.sort(numOrdA);
+			document.getElementById("demo").innerHTML ="list of books misplaced:"+list.toString();
+	
+		
+		}
+		
+	}
+	
+		
 	</script>
 </head>
 <body>
 
 <ul id="sortable">
-    <li class="ui-state-default" id = "0" >book 1</li>
-    <li class="ui-state-default" id = "1" >book 2</li>
-    <li class="ui-state-default" id = "2" >book 3</li>
-    <li class="ui-state-default" id = "3" >book 4</li>
-    <li class="ui-state-default" id = "4" >book 5</li>
+    <li class="ui-state-default" id = "1" >book 1</li>
+    <li class="ui-state-default" id = "2" >book 2</li>
+    <li class="ui-state-default" id = "3" >book 3</li>
+    <li class="ui-state-default" id = "4" >book 4</li>
+    <li class="ui-state-default" id = "5" >book 5</li>
 
 </ul>
 
+	
 <div class="allbuttons">
-<button class="button button5" onclick ="sort();">Show Work</button>
-<button class="button button5" onclick ="window.location.href='index.html';">Reset</button>
+<button class="button button5" onclick ="check_sort();">Show Work</button>
+<button class="button button5" onclick ="window.location.href='index.html'">Reset</button>
 <button class="button button5">Submit</button>
 </div>
+
+<div id="demo" style="color:white;"> result will display here </div> 
 
 </body>
 </html> 
