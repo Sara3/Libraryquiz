@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: "FontAwesome";
   src: url('font/fontawesome-webfont.eot');
@@ -27,6 +28,7 @@ body {
 .ui-sortable li.ui-state-default {
 	display: block;
 	margin: 20px;
+	margin-bottom: 100px;
 	float: left;
 	width: 100px;
 	height: 200px;
@@ -57,13 +59,29 @@ body {
 }
    
 .button5 {
-    background-color: #ccc;
-    color: black;
+    background-color: #555555;
+    color: white;
     border: 2px solid #555555;
+	padding: 5px;
 }
 
 .button5:hover {
-    background-color: #555555;
+    background-color: gray;
     color: white;
 }
+#allbuttons{
+	width: 1200px;
+	margin: 100px auto;
+}
 
+
+.container{
+	background-color: lightgrey;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
